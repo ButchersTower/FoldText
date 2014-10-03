@@ -1,0 +1,200 @@
+A bug just happened, when clicking on (0, 0, 0, 0) it set my cursor			Fixed
+	to 40 so of course when i press back space the program crashed
+	
+Need to update letLin when updating the arrayList by adding or				Fixed
+	deleting letter. A problem happened when i added more letters than
+	there were initially because letLoc has enough variables for the
+	initial text only
+	
+The program does not draw spaces as if they are letter, it just adds		Fixed
+	distance between the letter just drawn (last of the old word) and
+	the letter about to be drawn (first of a new word).
+Can try to change the way spaces are rendered so they are considered a		
+	letter. Or can try to find a way to keep text boxes the way they are
+	but some how know where the spaces are and adjust to that with letLoc
+	This also requires me to have letLoc add extra slots for the spaces.
+Because the letter are not drawn they do not get counted into the letLoc
+	That is also why for (layer = 0) that letLoc.get(0)[15][0&1] = 0
+
+Mouse cursor placement is working very well, i now need a visible cursor	Fixed
+	and need to think about where the cursor goes, if you click on the
+	right half of the letter the cursor goes directly in front of the
+	letter, but if you click on the left half then have the cursor before
+	the letter.
+	
+The ability to highlight letters (and effect multiple chars at one time)
+
+If you click to the right of line then it crashes.							Fixed
+
+Hitting enter take all the character that are past the cursor and
+	bring them to their own array in the arrayList.
+
+/**
+ * Error 
+ */
+	means that i want to put something here that records when that
+		error happens.
+
+Add the ability to go up using the arrow keys
+	This is tough, is there even really a purpose to this with the layering.
+	If i want to install have to take into account the indent.
+This would be nice for maneuvering in a single text box.
+	You can probably use figures to count 
+
+When the cursor is not on the first row, and if there is a space				Fixed
+	(all lines end in a space) at the end of the first line then the
+	cursors location is off
+
+Big problem, the way of splitting up words in order to have the words wrap		Fixed
+	around from the edge deletes spaces because it uses a delim of "[ ]"
+	But when there are multiple of them in a row it saves blank strings in
+	the AR's which it then goes and put spaces after the blanks.
+All right, maybe this isn't a problem. It seems that it can appropriately
+	save the spaces. But it apparently doesn't apply letLoc to them and they
+	go off of the edge of the screen.
+	The 
+
+I feel like the cursor belongs to the letter left of it. 
+
+Right now there is a space after "for" that isn't being recognized by the letLoc	Fixed
+
+In coversation right after "p to p" the multiple spaces in a row doesnt work 		Done
+
+
+Click selection doesn work when scrolled
+
+When adding text need to update letLoc, I should just update the text box that
+	is being effected. Right before the text is displayed it is Strings in a
+	String[][][][]
+
+
+Should organize the .java by having the inits in a secluded section
+
+
+put spaces onto the end of letLoc if there is room. 
+
+
+When i hit space when at the edge (end) of a text box it sends the cursor	Fixed
+	to the top left.
+Count the number of spaces at the end of the arrayList
+	|arraylist.get(arraylist.size-1)| and apply them
+
+Scrolling on the size (click and drag)
+
+For adding extra sections I should change lines to an
+	ArrayList<String[][][]>. Can i just add onto the middle of an
+	ArrayList? Yes... I need to decide how many sections the new
+	string[][][] will have. I should just add one section at a time.
+	string[1][0][0]
+	then can string[1][0]
+	and then string[1]
+
+Open or close all
+
+
+I think that the ability to click letter isnt tall enought, its only
+	16px detection not 18 like the letters are?
+
+Clicking the newly created button (pink) runs CursoLocA.
+
+When minimizing (or maximizing as long as there are txtBoxes below			Fixed
+	the [x][0][0][0] by clicking the button it runs drawAll() twice
+
+Can not select the [x][0][0][0] if it is minimized.							Foxed
+
+When folding text does not update cursor
+
+If using a buffer array to add to an array is less intensive then
+	using an arrayList all over the place then convert this back to
+	using AR's
+
+If you click in a text box at the end of a line and there are no letters
+	there the cursor should go to the end of that line not the end of the
+	txtBox
+
+Click and drag to highlight.
+Double click a word to select the whole word.
+Triple click to select the whole line.
+
+FIND WHAT IS THE NUMBER OF LETTERS IN THE LINE SO I CAN SET CURSOR				Done
+	TO THE END OF THE LINE IN BUTTONP
+
+Should have an int[][][]AL (or intAL cuz i can 1to4 or 4to1 )of the length
+	of every intAr
+
+
+
+
+How to allow the user to add and maneuver new txtBoxes.
+	Hold down shift and drag boxes above and below eachother.
+
+If there is no letters in the txtBox then it doesn't get letLoc so cursor
+	loc has an error.
+
+Line Break
+	have <br> in the text and split the total string into the stringAL
+
+If you scroll repetitivly the speed of scrolling picks up.
+	Click and drag side scroll bar for scrolling.
+
+If there is a box that has nothing in it when you save then it forgets
+	about that box
+If nothing comes out between () (when decompressing) then still add a
+	text box
+
+Change the size of the drawn image and instead just have it screen size
+	and draw only the shit that is supposed to be on screen
+
+
+I need to figure out the height of each txt box before i draw the letters.
+I should have the first run through the first time and get letter locs.
+I just need to remember the number of letter on each txt box a and draw
+the correct number of letter on each line straight to a string afterwards.   
+
+
+	
+
+******* Changeable Shit ********
+When you minimize fold the cursor goes to the last letter of the txtBox
+	that has everything below minimized.
+	
+	
+
+	
+******** New Shit ***********
+What there is to draw
+	background
+	min/exp buttons
+	selected box outline
+	txtBoxes
+	cursor (in a txt box)
+
+
+Fucking make commas, apostrophies.
+Exclimation marks and dashes
+
+The beginning of txtBox sets char loc. 
+
+How i want scroll to work. in order to not be over-intensive and still be accurate
+	Since if it draws every scroll they start to back up and you feel the lag.
+	
+	
+How to make additional layers. Need to add a string (on) and int[] (occ)
+
+if there is no box directly more indented then this box there should be no pink button.
+
+Make injectIntAr adding an int to an int Ar somewhere in the middle. 
+
+dealing with cursor. Adding cursor throught txtBox click. Draw cursor and -1 no cursor.
+
+
+multTextBox breaks it down from strings with <br> and that code.
+i should break down the string that i decompress it. But that forgets about breaks.
+How to figure out
+from the cursor which char it is at in the on String (which has special chars like "<br>")
+
+Check button click detection.
+
+
+
+
